@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#10131a"><title>MaghribiSDK</title><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button id="openFiles" class="icon-btn" aria-label="Buka file">☰</button>
+      <div class="brand-mark">M</div><div class="brand"><strong>MaghribiSDK</strong><small>Local C++ Assistant</small></div>
+      <span id="statusDot" class="status-dot" title="Status server"></span>
+    </header>
+    <main class="chat-area">
+      <section class="welcome" id="welcome">
+        <div class="hero-logo">M</div><h1>Apa yang bisa saya bantu?</h1>
+        <p>Chat lokal yang terhubung ke server C++ dan basis pengetahuan AiBalasan.</p>
+        <div class="quick-prompts">
+          <button data-prompt="Halo, apa yang bisa kamu lakukan?">✦ Kenalkan Maghribi</button>
+          <button data-prompt="Bagaimana cara menambah pengetahuan?">▤ Basis pengetahuan</button>
+          <button id="quickFiles">▣ Buka executable</button>
+        </div>
+      </section>
+      <section id="messages" class="messages" aria-live="polite"></section>
+    </main>
+    <form id="chatForm" class="composer">
+      <textarea id="messageInput" rows="1" placeholder="Kirim pesan ke Maghribi..." aria-label="Pesan"></textarea>
+      <button id="sendBtn" class="send-btn" type="submit" aria-label="Kirim pesan">↑</button>
+      <div class="composer-hint">Maghribi berjalan lokal · Jawaban berdasarkan file teks</div>
+    </form>
+    <div id="scrim" class="scrim"></div>
+    <aside id="fileDrawer" class="file-drawer" aria-label="File executable">
+      <div class="drawer-head"><div><h2>Executable</h2><p>Folder Maghribi/</p></div><button id="closeFiles" class="icon-btn" aria-label="Tutup">✕</button></div>
+      <div class="drawer-note">Pilih program yang Anda percaya untuk menjalankannya di komputer ini.</div>
+      <button id="refreshFiles" class="refresh-btn">↻ Muat ulang daftar</button>
+      <div id="fileList" class="file-list"><p class="muted">Memuat daftar...</p></div>
+      <div id="runMessage" class="run-message" role="status"></div>
+    </aside>
+  </div>
+  <script src="/app.js"></script>
+</body></html>
